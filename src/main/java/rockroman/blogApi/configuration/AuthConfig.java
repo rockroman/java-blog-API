@@ -27,7 +27,9 @@ public class AuthConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS.STATELESS))
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers(HttpMethod.GET, "/").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/auth/*").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/auth/signup").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/auth/signin").permitAll()
+
                         .requestMatchers(HttpMethod.GET, "/auth/*").permitAll()
 //                        .requestMatchers(HttpMethod.POST, "/authors").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.POST, "/authors").permitAll()
